@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cackysrhq8rth"]
+
+[ext_resource type="Texture2D" uid="uid://dbm84p73jmtpp" path="res://assets/Objects/torch.png" id="1_1l8jo"]
+[ext_resource type="Texture2D" uid="uid://qq1e14apm2m8" path="res://assets/Objects/torch_unlit.png" id="2_vllt2"]
+
+[sub_resource type="Gradient" id="Gradient_85jlx"]
+offsets = PackedFloat32Array(0, 0.973451)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2dfti"]
+gradient = SubResource("Gradient_85jlx")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.496894, 0.487578)
+fill_to = Vector2(0.770186, 0.891304)
+
+[node name="Torch" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+color = Color(1, 1, 0.45098, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_2dfti")
+
+[node name="Torch_lit" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_1l8jo")
+
+[node name="Torch_unlit" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 7.5)
+texture = ExtResource("2_vllt2")

@@ -1,0 +1,145 @@
+[gd_scene load_steps=17 format=3 uid="uid://ck6q168vh1f4e"]
+
+[ext_resource type="Texture2D" uid="uid://cq0oj20a6bk7b" path="res://assets/Objects/torch/Torch cropped.png" id="1_65mlj"]
+[ext_resource type="Texture2D" uid="uid://musk8nrydalq" path="res://assets/Objects/torch/Torch Animated.png" id="2_f43fs"]
+
+[sub_resource type="Gradient" id="Gradient_y7m56"]
+offsets = PackedFloat32Array(0, 0.973451)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iea21"]
+gradient = SubResource("Gradient_y7m56")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.496894, 0.487578)
+fill_to = Vector2(0.770186, 0.891304)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ladi"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frv7r"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc0g4"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siqm1"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp3f5"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6lbm"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qslw0"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8imcn"]
+atlas = ExtResource("2_f43fs")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23mmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ladi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frv7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc0g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siqm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp3f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6lbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qslw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8imcn")
+}],
+"loop": true,
+"name": &"torch_animated",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_rtep3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_mtm27"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 1.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3aca5"]
+_data = {
+"RESET": SubResource("Animation_rtep3"),
+"new_animation": SubResource("Animation_mtm27")
+}
+
+[node name="Torch_Animated" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+color = Color(1, 1, 0.45098, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_iea21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_23mmi")
+animation = &"torch_animated"
+autoplay = "torch_animated"
+
+[node name="Torch_unlit" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 10)
+texture = ExtResource("1_65mlj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3aca5")
+}
+autoplay = "new_animation"

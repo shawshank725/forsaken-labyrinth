@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcwg7j3shvn0t"]
+
+[ext_resource type="FontFile" uid="uid://b523ptqp3eiuu" path="res://assets/fonts/Cruickshank.ttf" id="1_0sdyc"]
+[ext_resource type="Script" path="res://scripts/ending.gd" id="1_br1kc"]
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_br1kc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 172.0
+offset_right = 1026.0
+offset_bottom = 222.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_0sdyc")
+theme_override_font_sizes/font_size = 30
+text = "Congratulations! You've escaped the forsaken labyrinth"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 250.0
+offset_right = 1026.0
+offset_bottom = 300.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_0sdyc")
+theme_override_font_sizes/font_size = 30
+text = " and emerged victorious from its treacherous depths. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 328.0
+offset_right = 1026.0
+offset_bottom = 403.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_0sdyc")
+theme_override_font_sizes/font_size = 30
+text = "You've conquered the darkness and claimed your freedom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 176.0
+offset_top = 522.0
+offset_right = 1026.0
+offset_bottom = 597.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_0sdyc")
+theme_override_font_sizes/font_size = 30
+text = "Press any key to continue...."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

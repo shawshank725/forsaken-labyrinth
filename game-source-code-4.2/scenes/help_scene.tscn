@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://beyjk7v4b3mu2"]
+
+[ext_resource type="Script" path="res://scripts/help_scene.gd" id="1_fggn5"]
+[ext_resource type="Texture2D" uid="uid://pypp88hvrsxg" path="res://assets/others/background.jpg" id="1_q3vrs"]
+[ext_resource type="FontFile" uid="uid://ct3oc0yksqr0v" path="res://assets/fonts/PrinceValiant.ttf" id="2_kgg0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01kl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alkna"]
+
+[node name="Help_Scene" type="Node2D"]
+script = ExtResource("1_fggn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.372549, 0.372549, 0.372549, 1)
+texture_filter = 1
+scale = Vector2(1.5, 1.26563)
+texture = ExtResource("1_q3vrs")
+centered = false
+
+[node name="Help" type="Label" parent="."]
+offset_top = 45.0
+offset_right = 1152.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 60
+text = "HELP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Objective" type="Label" parent="."]
+custom_minimum_size = Vector2(750, 30)
+offset_left = 176.0
+offset_top = 159.0
+offset_right = 976.0
+offset_bottom = 249.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 20
+text = "Objective: Your main objective is to escape the castle by collecting 8 key items: two keys, a black stone, a wand, a sword, an armor, a shield and the treasure. Keep track of your progress in the inventory."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Teleportation" type="Label" parent="."]
+custom_minimum_size = Vector2(750, 30)
+offset_left = 176.0
+offset_top = 250.0
+offset_right = 976.0
+offset_bottom = 371.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 20
+text = "Teleportation: You have the ability to teleport by right-clicking in an empty area. However, there are limitations. You can only teleport to locations within 450 units of your current position, and there is a cooldown period of 20 seconds between each teleportation. Keep an eye on your teleportation potion to recharge your teleportation powers."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Traps" type="Label" parent="."]
+custom_minimum_size = Vector2(750, 30)
+offset_left = 176.0
+offset_top = 401.0
+offset_right = 976.0
+offset_bottom = 460.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 20
+text = "Traps: Beware of saws, swinging axes, and spikes - deadly traps lurking throughout the castle, requiring careful timing and quick reflexes to avoid."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Alchemy Lab" type="Label" parent="."]
+custom_minimum_size = Vector2(750, 30)
+offset_left = 176.0
+offset_top = 489.0
+offset_right = 976.0
+offset_bottom = 548.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 20
+text = "Alchemy Lab Curse: The alchemy lab is cursed and drains the power of anyone standing in it for too long. Be cautious and avoid lingering in the lab for extended periods."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Go_Back_Button" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 563.0
+offset_right = 123.0
+offset_bottom = 591.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_kgg0u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_01kl8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_alkna")
+text = "Go Back"
+flat = true
+
+[connection signal="pressed" from="Go_Back_Button" to="." method="_on_go_back_button_pressed"]

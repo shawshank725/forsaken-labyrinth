@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c5q5306u8pwt"]
+
+[ext_resource type="FontFile" uid="uid://ct3oc0yksqr0v" path="res://assets/fonts/PrinceValiant.ttf" id="1_1ocdv"]
+
+[resource]
+font = ExtResource("1_1ocdv")
+outline_color = Color(0.960784, 0.960784, 0.960784, 1)

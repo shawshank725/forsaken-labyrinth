@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://dygc85x25h7vk"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_al0vt"]
+[ext_resource type="Texture2D" uid="uid://pypp88hvrsxg" path="res://assets/others/background.jpg" id="2_j8ns0"]
+[ext_resource type="FontFile" uid="uid://ct3oc0yksqr0v" path="res://assets/fonts/PrinceValiant.ttf" id="2_vyh2b"]
+[ext_resource type="FontFile" uid="uid://to2je0475kv0" path="res://assets/fonts/Sketch Gothic School.ttf" id="3_kbakb"]
+[ext_resource type="Texture2D" uid="uid://b13ljmc8who7n" path="res://discord.jpg" id="5_km1g5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8sbjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htsp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_al0vt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.26563)
+texture = ExtResource("2_j8ns0")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1151.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("3_kbakb")
+theme_override_font_sizes/font_size = 100
+text = "The Forsaken Labyrinth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.764706)
+offset_left = 520.0
+offset_top = 371.0
+offset_right = 632.0
+offset_bottom = 500.0
+color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 95.0
+offset_bottom = 121.0
+
+[node name="Play_Button" type="Button" parent="ColorRect/GridContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("2_vyh2b")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8sbjq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_htsp3")
+text = "Play"
+flat = true
+icon_alignment = 1
+
+[node name="Help_Button" type="Button" parent="ColorRect/GridContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("2_vyh2b")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8sbjq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_htsp3")
+text = "Help"
+flat = true
+
+[node name="Credits_Button" type="Button" parent="ColorRect/GridContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("2_vyh2b")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8sbjq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_htsp3")
+text = "Credits"
+flat = true
+
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = 1078.0
+offset_top = 584.0
+offset_right = 1118.0
+offset_bottom = 624.0
+underline = 2
+uri = "https://discord.gg/zMMTRsS7"
+
+[node name="TextureRect" type="TextureRect" parent="LinkButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_km1g5")
+expand_mode = 1
+
+[connection signal="pressed" from="ColorRect/GridContainer/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Help_Button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Credits_Button" to="." method="_on_credits_button_pressed"]

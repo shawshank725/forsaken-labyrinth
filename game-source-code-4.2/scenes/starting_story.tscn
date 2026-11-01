@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://dny1bqft0du3m"]
+
+[ext_resource type="Script" path="res://scripts/starting_story.gd" id="1_bkn6q"]
+[ext_resource type="FontFile" uid="uid://b523ptqp3eiuu" path="res://assets/fonts/Cruickshank.ttf" id="1_swpl0"]
+[ext_resource type="FontFile" uid="uid://ct3oc0yksqr0v" path="res://assets/fonts/PrinceValiant.ttf" id="3_hfsu4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmbsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_11cdt"]
+
+[node name="Starting_Story" type="Node2D"]
+script = ExtResource("1_bkn6q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 172.0
+offset_right = 976.0
+offset_bottom = 222.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_swpl0")
+theme_override_font_sizes/font_size = 30
+text = "you awaken alone in the shadowy depths of an"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 250.0
+offset_right = 976.0
+offset_bottom = 300.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_swpl0")
+theme_override_font_sizes/font_size = 30
+text = "ancient, trap-filled castle. Your sole mission: navigate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 328.0
+offset_right = 976.0
+offset_bottom = 378.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_swpl0")
+theme_override_font_sizes/font_size = 30
+text = "its perilous corridors, outsmart deadly traps, and"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 406.0
+offset_right = 976.0
+offset_bottom = 456.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_swpl0")
+theme_override_font_sizes/font_size = 30
+text = " escape to freedom before the darkness claims you."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Skip_Button" type="Button" parent="."]
+offset_left = 946.0
+offset_top = 516.0
+offset_right = 1064.0
+offset_bottom = 585.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hfsu4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tmbsw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_11cdt")
+text = "Skip"
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Skip_Button" to="." method="_on_skip_button_pressed"]

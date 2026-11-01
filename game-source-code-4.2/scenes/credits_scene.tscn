@@ -1,0 +1,199 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfskmjn3t7auj"]
+
+[ext_resource type="Texture2D" uid="uid://pypp88hvrsxg" path="res://assets/others/background.jpg" id="1_2pmmv"]
+[ext_resource type="Script" path="res://scripts/credits_scene.gd" id="1_tsg0q"]
+[ext_resource type="FontFile" uid="uid://ct3oc0yksqr0v" path="res://assets/fonts/PrinceValiant.ttf" id="2_xbi80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s00yf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi7fj"]
+
+[node name="Credits_Scene" type="Node2D"]
+script = ExtResource("1_tsg0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.372549, 0.372549, 0.372549, 1)
+texture_filter = 1
+scale = Vector2(1.5, 1.26563)
+texture = ExtResource("1_2pmmv")
+centered = false
+
+[node name="Credits" type="Label" parent="."]
+offset_top = 45.0
+offset_right = 1152.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Objective" type="Label" parent="."]
+custom_minimum_size = Vector2(750, 30)
+offset_left = 78.0
+offset_top = 151.0
+offset_right = 1083.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Heartfelt Thanks to the Talented Creators Whose Assets Brought Our World to Life"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Go_Back_Button" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 563.0
+offset_right = 123.0
+offset_bottom = 591.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0.0980392, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s00yf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bi7fj")
+text = "Go Back"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 76.0
+offset_top = 212.0
+offset_right = 1076.0
+offset_bottom = 552.0
+color = Color(0.258824, 0.258824, 0.258824, 0.415686)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 340.0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Credit_given1" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Armory and Weapons
+Ssugmi and RavenMore for their exceptional armory assets, arming our heroes and villains alike."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given2" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Mysterious Artifacts
+Lexlom for the enigmatic Black Monolith, a cornerstone of our game's lore."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given3" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Alchemy Lab
+NVPH Studio for the intricate 80 tubes alchemy set, bringing the arcane to life in 16x16 pixels.
+Free Game Assets (GUI, Sprite, Tilesets) for the vibrant collection of 48 Free Magic Potions Pixel Art Icons, adding a splash of color to our concoctions."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given4" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Lighting the Dark
+UnIsTaJa for Floor lamps, candelabra, and chandeliers in Pixel, illuminating our darkest corners."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given5" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Castle Interiors
+Nipeyo for the castle interiors, creating spaces filled with mystery and intrigue."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given6" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "User Interface
+Midhil [Leo Red] for the UI Lucid icons, ensuring clarity and beauty within our game's interface."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given7" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Medieval Flair
+BlackSpire Studio for their Medieval Objects, enriching our world with historical authenticity."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given8" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Keys to the Kingdom
+karsiori for the FREE Pixel Art Key Pack - Animated, unlocking the many secrets hidden within our realms."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given9" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Characters
+Luck for the animated character of a Satyr, bringing personality and life to our story."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given10" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Dungeon Depths
+David G for the Dungeon Tileset, crafting the perilous depths that our players bravely explore."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given11" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Castle Ambiance
+ \"A Sinister Power Rising\" by GioeleFazzeri on Pixabay"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit_given12" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xbi80")
+theme_override_font_sizes/font_size = 20
+text = "Crafted with passion and dedication by an independent developer driven by a love for gaming and creativity."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Go_Back_Button" to="." method="_on_go_back_button_pressed"]
